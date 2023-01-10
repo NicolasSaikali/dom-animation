@@ -3,14 +3,14 @@ A Javascript library that provides shorthand DOM elements animations especially 
 
 #Getting Started
 
-##Installation
+## Installation
 
 run the following command
 ```bash
 npm install @nikolajs/dom-animation
 ```
 
-##Usage
+## Usage
 ```html
     <div 
         class="animated"
@@ -23,14 +23,14 @@ npm install @nikolajs/dom-animation
     </div>
 ```
 
-##Animations
+## Animations
 
 Animations are defined under 'data-animated' attribute separated by a comma. 
 
-###Transform
+### Transform
 
 Specify that the animation segment is a transform property than specify a direction to translate the element in
 
-###Fade
+### Fade
 
 When defined, this property fades in the element
