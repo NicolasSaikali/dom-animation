@@ -1,6 +1,6 @@
 {
   "name": "@nikolajs/dom-animation",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Javascript library that provides shorthand DOM elements animations",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/NicolasSaikali/dom-animation.git"
   },
-  "keywords": [],
+  "keywords": [
+    "animation",
+    "html",
+    "javascript",
+    "css",
+    "DOM",
+    "html5",
+    "commonjs",
+    "library"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
