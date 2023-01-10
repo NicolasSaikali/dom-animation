@@ -1,7 +1,7 @@
 # dom-animation
 A Javascript library that provides shorthand DOM elements animations especially for landing pages.
 
-#Getting Started
+# Getting Started
 
 ## Installation
 
