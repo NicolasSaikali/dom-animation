@@ -10,6 +10,11 @@ run the following command
 npm install @nikolajs/dom-animation
 ```
 
+include in your html file
+```html
+    <script src="path/to/node_modules/@nikolajs/dom-animation/index.js"></script>
+```
+
 ## Usage
 ```html
     <div 
