@@ -1,9 +1,8 @@
 {
   "name": "@nikolajs/dom-animation",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A Javascript library that provides shorthand DOM elements animations",
   "main": "index.js",
-  "private":"false",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -15,7 +15,7 @@ function getCSSProperties(animated, transition, trigger, elt) {
         if (animation[0] === 'transform') {
             const transforms = animation?.[1]?.split('-') || ['up']
             transforms?.forEach(transformProperty => {
-                oldCSSProperties['transition'] = ` transform ${transition}ms `;
+                oldCSSProperties['transition'] += ` transform ${transition}ms `;
                 if (transformProperty === 'up') {
                     oldCSSProperties['transform'] = 'translateY(50%)';
                     callBack = (element) => {
