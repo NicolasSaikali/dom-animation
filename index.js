@@ -57,10 +57,15 @@ function getCSSProperties(animated, transition, trigger, elt) {
 }
 
 function isElementInViewport(elt) {
+    const rect = elt.getBoundingClientRect();
+    
     return (
-        elt.offsetTop >= window.scrollY &&
-        elt.offsetTop + elt.offsetHeight <= window.scrollY + window.innerHeight
-    )
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+    );
+
 }
 
 
