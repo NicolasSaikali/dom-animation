@@ -1,9 +1,14 @@
+import "./node_modules/jquery/dist/jquery.min.js"
+
+const $ = jQuery
+
 const triggers = {
     ON_SCREEN: 'on screen',
     ON_MOUSE_OVER: 'on mouse over',
     ON_MOUSE_OUT: 'on mouse out',
 }
-callBack = (element) => { }
+
+let callBack = (element) => { }
 
 function getCSSProperties(animated, transition, trigger, elt) {
     const oldCSSProperties = {}
@@ -15,6 +20,8 @@ function getCSSProperties(animated, transition, trigger, elt) {
         if (animation[0] === 'transform') {
             const transforms = animation?.[1]?.split('-') || ['up']
             transforms?.forEach(transformProperty => {
+                if(!oldCSSProperties['transition'])
+                    oldCSSProperties['transition'] = ''
                 oldCSSProperties['transition'] += ` transform ${transition}ms `;
                 if (transformProperty === 'up') {
                     oldCSSProperties['transform'] = 'translateY(50%)';
@@ -47,9 +54,14 @@ function getCSSProperties(animated, transition, trigger, elt) {
                 newCSSProperties['opacity'] = 1
             }
         } else if (animation[0] === 'height') {
+            oldCSSProperties['overflow'] = 'hidden';
+            newCSSProperties['overflow'] = 'hidden';
             if (animation[1] === 'expand') {
                 oldCSSProperties['max-height'] = 0
                 newCSSProperties['max-height'] = 1000
+            } else if (animation[1] === "shrink"){
+                oldCSSProperties['max-height'] = 1000
+                newCSSProperties['max-height'] = 0
             }
         }
     })
@@ -70,17 +82,17 @@ function isElementInViewport(elt) {
 
 
 function handleAnimatedElements() {
-    let animated = 'transform up-scaleup,fade in'
-    let transition = '700'
-    let trigger = triggers.ON_SCREEN
-
-    function animate(v, properties) {
-        callBack(v)
-        $(v).animate(properties.newCSSProperties, parseInt(transition))
-        $(v).removeClass('animated')
-    }
-
+    
     $('.animated').each((k, v) => {
+        let animated = 'transform up-scaleup,fade in'
+        let transition = '700'
+        let trigger = triggers.ON_SCREEN
+    
+        function animate(v, properties) {
+            callBack(v)
+            $(v).animate(properties.newCSSProperties, parseInt(transition))
+            $(v).removeClass('animated')
+        }
         if ($(v).data('animated') !== undefined)
             animated = $(v).data('animated')
         if ($(v).data('transition') !== undefined)
@@ -88,15 +100,19 @@ function handleAnimatedElements() {
         if ($(v).data('trigger') !== undefined)
             trigger = $(v).data('trigger')
         const properties = getCSSProperties(animated, transition, trigger, v)
+        console.log(properties.oldCSSProperties)
         $(v).css(properties.oldCSSProperties)
         setTimeout(() => {
-            if (trigger === triggers.ON_SCREEN && isElementInViewport(v)) {
-                animate(v, properties)
-            } else if(trigger === triggers.ON_MOUSE_OVER){
+            if(trigger === triggers.ON_MOUSE_OVER){
                 $(v).on('mouseover', () => {
+                    callBack(v)
                     animate(v, properties)
                 })
             }
+            else {
+                callBack(v)
+                animate(v, properties)
+            }  
         }, 100)
     })
 }
