@@ -1,6 +1,6 @@
 {
   "name": "@nikolajs/dom-animation",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A Javascript library that provides shorthand DOM elements animations",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "url": "https://github.com/NicolasSaikali/dom-animation/issues"
   },
   "homepage": "https://github.com/NicolasSaikali/dom-animation#readme",
-  "dependencies": {
+  "devDependencies": {
     "jquery": "^3.6.3"
   }
 }

@@ -1,4 +1,4 @@
-import "./node_modules/jquery/dist/jquery.min.js"
+import "https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"
 
 const $ = jQuery
 
@@ -20,7 +20,7 @@ function getCSSProperties(animated, transition, trigger, elt) {
         if (animation[0] === 'transform') {
             const transforms = animation?.[1]?.split('-') || ['up']
             transforms?.forEach(transformProperty => {
-                if(!oldCSSProperties['transition'])
+                if (!oldCSSProperties['transition'])
                     oldCSSProperties['transition'] = ''
                 oldCSSProperties['transition'] += ` transform ${transition}ms `;
                 if (transformProperty === 'up') {
@@ -59,7 +59,7 @@ function getCSSProperties(animated, transition, trigger, elt) {
             if (animation[1] === 'expand') {
                 oldCSSProperties['max-height'] = 0
                 newCSSProperties['max-height'] = 1000
-            } else if (animation[1] === "shrink"){
+            } else if (animation[1] === "shrink") {
                 oldCSSProperties['max-height'] = 1000
                 newCSSProperties['max-height'] = 0
             }
@@ -70,11 +70,11 @@ function getCSSProperties(animated, transition, trigger, elt) {
 
 function isElementInViewport(elt) {
     const rect = elt.getBoundingClientRect();
-    
+
     return (
-        rect.top <= window.screenTop + window.innerHeight && 
-        rect.top >= window.screenTop || 
-        rect.bottom <= window.screenTop + window.innerHeight && 
+        rect.top <= window.screenTop + window.innerHeight &&
+        rect.top >= window.screenTop ||
+        rect.bottom <= window.screenTop + window.innerHeight &&
         rect.bottom >= window.screenTop
     );
 
@@ -82,12 +82,12 @@ function isElementInViewport(elt) {
 
 
 function handleAnimatedElements() {
-    
+
     $('.animated').each((k, v) => {
         let animated = 'transform up-scaleup,fade in'
         let transition = '700'
         let trigger = triggers.ON_SCREEN
-    
+
         function animate(v, properties) {
             callBack(v)
             $(v).animate(properties.newCSSProperties, parseInt(transition))
@@ -103,7 +103,7 @@ function handleAnimatedElements() {
         console.log(properties.oldCSSProperties)
         $(v).css(properties.oldCSSProperties)
         setTimeout(() => {
-            if(trigger === triggers.ON_MOUSE_OVER){
+            if (trigger === triggers.ON_MOUSE_OVER) {
                 $(v).on('mouseover', () => {
                     callBack(v)
                     animate(v, properties)
@@ -112,7 +112,7 @@ function handleAnimatedElements() {
             else {
                 callBack(v)
                 animate(v, properties)
-            }  
+            }
         }, 100)
     })
 }
