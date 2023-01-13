@@ -1,6 +1,6 @@
 {
   "name": "@nikolajs/dom-animation",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "A Javascript library that provides shorthand DOM elements animations",
   "main": "index.js",
   "scripts": {
