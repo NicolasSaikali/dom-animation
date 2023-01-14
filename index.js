@@ -15,6 +15,7 @@ function getCSSProperties(animated, transition, trigger, elt) {
     const newCSSProperties = {}
     const statements = animated.split(',')
     const animations = statements?.map(elt => elt.split(' '))
+
     animations?.forEach(animation => {
         console.log('animation', animation)
         if (animation[0] === 'transform') {
@@ -88,9 +89,13 @@ function handleAnimatedElements() {
         let transition = '700'
         let trigger = triggers.ON_SCREEN
 
+        let target = v
+        if(!!$(v).data('target'))
+            target = $($(v).data('target'))
+
         function animate(v, properties) {
             callBack(v)
-            $(v).animate(properties.newCSSProperties, parseInt(transition))
+            $(target).animate(properties.newCSSProperties, parseInt(transition))
             $(v).removeClass('animated')
         }
         if ($(v).data('animated') !== undefined)
@@ -99,21 +104,23 @@ function handleAnimatedElements() {
             transition = $(v).data('transition')
         if ($(v).data('trigger') !== undefined)
             trigger = $(v).data('trigger')
-        const properties = getCSSProperties(animated, transition, trigger, v)
-        console.log(properties.oldCSSProperties)
-        $(v).css(properties.oldCSSProperties)
+
+        const properties = getCSSProperties(animated, transition, trigger, target)
+        
+        $(target).css(properties.oldCSSProperties)
+        
         setTimeout(() => {
             if (trigger === triggers.ON_MOUSE_OVER) {
                 $(v).on('mouseover', () => {
                     callBack(v)
-                    animate(v, properties)
+                    animate(target, properties)
                 })
             }
-            else {
-                callBack(v)
-                animate(v, properties)
+            else if(isElementInViewport(v)){
+                callBack(target)
+                animate(target, properties)
             }
-        }, 100)
+        }, 300)
     })
 }
 

@@ -1,40 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dom-animation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
-<body>
-    <h1 class="animated" data-animated="fade,transform right">
-        Fade + Translate right
-    </h1>
-    <h1 class="animated" data-animated="fade,transform left">
-        Fade + Translate left
-    </h1>
-    <h1 class="animated" data-animated="fade,transform up">
-        Fade + Translate up
-    </h1>
-    <h1 class="animated" data-animated="fade,transform down">
-        Fade + Translate down
-    </h1>
-    <h1 class="animated" data-animated="height expand" data-transition="5000">
-        <div>
-            height
+
+<body class="bg-dark overflow-x-hidden">
+    <div class="container">
+        <div class="row pb-5 mb-5">
+            <div class="col-12">
+                <h1 class="text-light">
+                    On Screen
+                </h1>
+            </div>
+            <div class="col-12">
+                <h2 class="text-light">
+                    Fade & Translate right
+                </h1>
+                <div class="animated card card-light p-2" data-animated="transform right,fade" data-trigger="on screen">
+                    <h3 class="text-dark">
+                        Lorem upsum dolor sit amet
+                    </h3>
+                    <p class="text-secondary">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div>
-            expand
+        <div class="row pb-5 mb-5">
+            <div class="col-12">
+                <h2 class="text-light">
+                    Fade & Translate left
+                </h1>
+                <div class="animated card card-light p-2" data-animated="transform left,fade" data-trigger="on screen">
+                    <h3 class="text-dark">
+                        Lorem upsum dolor sit amet
+                    </h3>
+                    <p class="text-secondary">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
         </div>
-    </h1>
-    <h1 class="animated" data-animated="height shrink" data-transition="1000">
-        <div>
-            height
+        <div class="row pb-5 mb-5">
+            <div class="col-12">
+                <h2 class="text-light">
+                    Fade & Translate up
+                </h1>
+                <div class="animated card card-light p-2" data-animated="transform up,fade" data-trigger="on screen">
+                    <h3 class="text-dark">
+                        Lorem upsum dolor sit amet
+                    </h3>
+                    <p class="text-secondary">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div>
-            shrink
+        <div class="row pb-5 mb-5">
+            <div class="col-12">
+                <h2 class="text-light">
+                    Fade & Translate down
+                </h1>
+                <div class="animated card card-light p-2" data-animated="transform down,fade" data-trigger="on screen">
+                    <h3 class="text-dark">
+                        Lorem upsum dolor sit amet
+                    </h3>
+                    <p class="text-secondary">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
         </div>
-    </h1>
+        <div class="row pb-5 mb-5">
+            <div class="col-12">
+                <h2 class="text-light">
+                    Height expand
+                </h1>
+                <div class="animated card card-light p-2" data-animated="height expand,fade" data-trigger="on screen">
+                    <h3 class="text-dark">
+                        Lorem upsum dolor sit amet
+                    </h3>
+                    <p class="text-secondary">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row pb-5 mb-5">
+            <div class="col-12">
+                <h2 class="text-light">
+                    Shrink
+                </h1>
+                <div class="animated" data-animated="height shrink,fade" data-trigger="on screen">
+                    <div class="card card-light p-2">
+                        <h3 class="text-dark">
+                            Lorem upsum dolor sit amet
+                        </h3>
+                        <p class="text-secondary">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-5 mt-5">
+            <div class="col-12">
+                <h1 class="text-light">
+                    On Mouse Over
+                </h1>
+            </div>
+            <div class="col-12">
+                <div class="row mb-5 pb-5">
+                    <h2 class="text-light animated bg-secondary" data-trigger="on mouse over" data-animated="height expand" data-target="#height-expand">
+                        Height Expand
+                    </h2>
+                    <div id="height-expand">
+                        <div class="card card-light p-2">
+                            <h3 class="text-dark">
+                                Lorem upsum dolor sit amet
+                            </h3>
+                            <p class="text-secondary">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5 pb-5">
+                    <h2 class="text-light animated bg-secondary" data-trigger="on mouse over" data-animated="height shrink" data-target="#height-shrink">
+                        Height Shrink
+                    </h2>
+                    <div id="height-shrink">
+                        <div class="card card-light p-2">
+                            <h3 class="text-dark">
+                                Lorem upsum dolor sit amet
+                            </h3>
+                            <p class="text-secondary">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="module" src="./index.js"></script>
 </body>
+
 </html>
